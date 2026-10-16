@@ -1,0 +1,6 @@
+{
+  "name": "VerdantX - CleanTech Venture & Grid Simulator",
+  "description": "High-performance techno-economic simulator and interactive educational game suite exploring profitable green technology ventures, smart grid dispatch, and carbon economics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

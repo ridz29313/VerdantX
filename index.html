@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerdantX - CleanTech Venture & Grid Simulator</title>
+    <meta name="description" content="High-performance techno-economic simulator and interactive educational game suite exploring profitable green technology ventures, smart grid dispatch, and carbon economics." />
+    <meta property="og:title" content="VerdantX - CleanTech Venture & Grid Simulator" />
+    <meta property="og:description" content="High-performance techno-economic simulator and interactive educational game suite exploring profitable green technology ventures, smart grid dispatch, and carbon economics." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="VerdantX" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      // Suppress Vite HMR WebSocket disconnect noise in sandbox iFrame environment
+      window.addEventListener('error', function(event) {
+        if (event && event.message && (event.message.includes('WebSocket') || event.message.includes('vite'))) {
+          event.stopImmediatePropagation();
+        }
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event && event.reason && String(event.reason).includes('WebSocket')) {
+          event.stopImmediatePropagation();
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

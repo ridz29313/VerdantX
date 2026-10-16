@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile and cumulative clean economy milestones",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 128 },
+        "photoURL": { "type": "string", "maxLength": 512 },
+        "gridHighScore": { "type": "number" },
+        "highestValuationM": { "type": "number" },
+        "totalCarbonAbatedTons": { "type": "number" },
+        "isCertifiedAnalyst": { "type": "boolean" },
+        "lastActiveAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "GameSaveState": {
+      "title": "GameSaveState",
+      "description": "Persisted snapshot of grid dispatch and venture tycoon progression",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "gridHour": { "type": "number" },
+        "gridCash": { "type": "number" },
+        "gridScore": { "type": "number" },
+        "tycoonQuarter": { "type": "number" },
+        "tycoonFundCashM": { "type": "number" },
+        "tycoonValuationM": { "type": "number" },
+        "savedAt": { "type": "string" }
+      },
+      "required": ["userId", "savedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Authenticated user profile and clean economy career achievements"
+    },
+    "/users/{userId}/saves/{saveId}": {
+      "schema": "GameSaveState",
+      "description": "Persisted simulation state and venture progress"
+    }
+  }
+}
